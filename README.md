@@ -180,7 +180,7 @@ a.this {
 
 ## Run to example
 
-**1** Close this
+**1** Clone this
 
 ```
 git clone git@github.com:totora0155/postcss-matter.git

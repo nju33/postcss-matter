@@ -8,7 +8,6 @@ export default class Matter {
                 `${param}-${node.selector}` :
                 node.selector;
     this.decls = node.nodes;
-    this.length = node.nodes.length;
     this.targetDecls = [];
     this._opts = opts;
   }

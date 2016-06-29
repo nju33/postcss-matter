@@ -24,6 +24,13 @@ export default postcss.plugin('postcss-matter', (opts = {}) => {
     function collectMatter() {
       const matters = {};
       css.walkAtRules('matter', rule => {
+        const decls = _.filter(rule.nodes, node => node.type === 'rule');
+
+        if (!decls.length) {
+          rule.remove();
+          return;
+        }
+
         _.forEach(rule.nodes, node => {
           const matter = new Matter(node, rule.params, opts);
           matters[matter.name] = matter;

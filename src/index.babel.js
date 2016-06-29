@@ -19,7 +19,6 @@ export default postcss.plugin('postcss-matter', (opts = {}) => {
         matter.replaceDecl();
       }
       matter.removeOrigin();
-      // console.log(css.toString());
     });
 
     function collectMatter() {

@@ -121,6 +121,8 @@ a.this {
     declaration;
     ...
   }
+  (<matter-name> {...})
+  (<matter-name> {...})
 }
 ```
 

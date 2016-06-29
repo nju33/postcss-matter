@@ -1,0 +1,22 @@
+a.that,
+a.this {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.input {
+  box-sizing: border-box;
+  border: 1px solid #333;
+}
+
+.btn {
+  padding: .5em 1em;
+  background: #e42829;
+}
+
+.btn--small {
+  padding: .5em 1em;
+  background: #e42829;
+  font-size: .85em;
+}

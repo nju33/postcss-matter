@@ -1,7 +1,7 @@
 {
   "name": "postcss-matter",
-  "description": "PostCSS plugin that prefix a namespace to a selector",
-  "version": "1.1.0",
+  "description": "PostCSS plugin that to add matter property",
+  "version": "1.1.1",
   "author": {
     "name": "nju33",
     "email": "sski0155+npm@gmail.com",

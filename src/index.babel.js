@@ -9,12 +9,16 @@ const defaultOpts = {
 export default postcss.plugin('postcss-matter', (opts = {}) => {
   opts = Object.assign({}, defaultOpts, opts);
 
-  return css => {
+  return (css, result) => {
     const matters = collectMatter();
     walkDecls();
     _.forEach(matters, matter => {
       if (matter.isIsolate()) {
-        css.insertBefore(matter.initialTargetSelector, matter.rule);
+        try {
+          css.insertBefore(matter.initialTargetSelector, matter.rule);
+        } catch (err) {
+          result.warn(`${matter.name} was unused matter`, {node: matter});
+        }
       } else {
         matter.replaceDecl();
       }

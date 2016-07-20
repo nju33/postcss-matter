@@ -205,6 +205,7 @@ cd examples && node postcss.js
 
 |version|log|
 |:-:|:--|
+|0.0.4|Bugfix for filter|
 |0.0.3|Bugfix when a matter unused|
 |0.0.2|Fix bug|
 |0.0.1|Release!|

@@ -35,7 +35,7 @@ export default postcss.plugin('postcss-matter', (opts = {}) => {
           return;
         }
 
-        _.forEach(rule.nodes, node => {
+        _.forEach(decls, node => {
           const matter = new Matter(node, rule.params, opts);
           matters[matter.name] = matter;
         });

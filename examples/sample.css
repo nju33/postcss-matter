@@ -1,5 +1,10 @@
 @matter {
+  common {
+    -webkit-tap-highlight-color: #fff;
+  }
+
   default-a {
+    matter: common;
     color: inherit;
     text-decoration: none;
     cursor: pointer;

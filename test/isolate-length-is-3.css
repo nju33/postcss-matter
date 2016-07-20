@@ -1,5 +1,6 @@
 a.that,
 a.this {
+  -webkit-tap-highlight-color: #fff;
   color: inherit;
   text-decoration: none;
   cursor: pointer;

@@ -13,6 +13,7 @@ export default postcss.plugin('postcss-matter', (opts = {}) => {
     const matters = collectMatter();
     walkDecls();
     _.forEach(matters, matter => {
+      matter = resolve(matter, matters);
       if (matter.isIsolate()) {
         try {
           css.insertBefore(matter.initialTargetSelector, matter.rule);
@@ -51,6 +52,17 @@ export default postcss.plugin('postcss-matter', (opts = {}) => {
           matter.targetDecls.push(decl);
         }
       });
+    }
+
+    function resolve(matter, matters) {
+      matter.node.walkDecls('matter', decl => {
+        if (matters[decl.value]) {
+          const innerMatter = matters[decl.value];
+          decl.parent.insertBefore(decl, innerMatter.decls);
+          decl.remove();
+        }
+      });
+      return matter;
     }
   };
 });

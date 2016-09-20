@@ -1,7 +1,7 @@
 {
   "name": "postcss-matter",
   "description": "PostCSS plugin that to add matter property",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "nju33",
     "email": "sski0155+npm@gmail.com",
@@ -11,6 +11,7 @@
     "url": "https://github.com/totora0155/postcss-matter/issues"
   },
   "dependencies": {
+    "chalk": "^1.1.3",
     "lodash": "^4.13.1",
     "postcss": "^5.0.10"
   },

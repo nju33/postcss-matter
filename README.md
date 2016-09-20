@@ -211,6 +211,7 @@ cd examples && node postcss.js
 
 |version|log|
 |:-:|:--|
+|0.1.1|Change output. `result.warn` -> `console.log`|
 |0.1.0|Use a matter from a matter|
 |0.0.4|Bugfix for filter|
 |0.0.3|Bugfix when a matter unused|

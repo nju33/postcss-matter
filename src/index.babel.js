@@ -1,5 +1,6 @@
 import postcss from 'postcss';
 import _ from 'lodash';
+import chalk from 'chalk';
 import Matter from './matter';
 
 const defaultOpts = {
@@ -9,7 +10,7 @@ const defaultOpts = {
 export default postcss.plugin('postcss-matter', (opts = {}) => {
   opts = Object.assign({}, defaultOpts, opts);
 
-  return (css, result) => {
+  return css => {
     const matters = collectMatter();
     walkDecls();
     _.forEach(matters, matter => {
@@ -18,7 +19,10 @@ export default postcss.plugin('postcss-matter', (opts = {}) => {
         try {
           css.insertBefore(matter.initialTargetSelector, matter.rule);
         } catch (err) {
-          result.warn(`${matter.name} was unused matter`, {node: matter});
+          const prefix = chalk.white.bold.bgYellow(' postcss-matter ');
+          const message = chalk.yellow(`${matter.name} was unused matter`);
+          console.log(`${prefix} ${message}`);
+          return;
         }
       } else {
         matter.replaceDecl();
